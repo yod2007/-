@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партия «МОЯ РОССИЯ» - Выборы в Госдуму 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary-blue: #1f3c7a;
+            --secondary-blue: #2a5298;
+            --accent-red: #d52b1e;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+        
+        body {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            transition: all 0.3s;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(31, 60, 122, 0.85), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1547981609-4b6bf67b7dbb?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content .slogan {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-red);
+            margin: 0 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: white;
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: white;
+            color: var(--primary-blue);
+        }
+        
+        /* Section Common */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-red);
+            margin: 15px auto;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Goals Section */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .goal-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .goal-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .goal-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        /* Strategy Section */
+        .strategy {
+            background-color: var(--light-gray);
+        }
+        
+        .strategy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .strategy-point {
+            display: flex;
+            margin-bottom: 2.5rem;
+            align-items: flex-start;
+        }
+        
+        .strategy-number {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .strategy-text h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .news-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Join Section */
+        .join {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .join .section-title {
+            color: white;
+        }
+        
+        .join .section-title:after {
+            background-color: white;
+        }
+        
+        .join-text {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .join-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            padding: 12px 15px;
+            border-radius: 4px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background-color: #b32419;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content .slogan {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div>
+                    <div class="logo-text">МОЯ РОССИЯ</div>
+                    <div class="logo-subtitle">Политическая партия</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">О партии</a></li>
+                    <li><a href="#goals">Наши цели</a></li>
+                    <li><a href="#strategy">Стратегия</a></li>
+                    <li><a href="#news">Новости</a></li>
+                    <li><a href="#join">Вступить</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>МОЯ РОССИЯ - Выборы в Госдуму 2026</h1>
+            <p class="slogan">Технологический прогресс и социальная справедливость. Вместе построим будущее России!</p>
+            <div class="cta-buttons">
+                <a href="#join" class="cta-button">Вступить в партию</a>
+                <a href="#strategy" class="cta-button secondary">Узнать о программе</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">О партии «МОЯ РОССИЯ»</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Партия «МОЯ РОССИЯ» — это новая политическая сила, объединяющая технологический прогресс и социальную справедливость. Наш дебют на федеральном уровне состоится на выборах в Государственную Думу РФ в 2026 году.</p>
+                    <br>
+                    <p>Мы представляем интересы молодых профессионалов, предпринимателей, ученых и всех граждан, которые стремятся жить в современной, технологически развитой и социально справедливой России.</p>
+                    <br>
+                    <p>Наша цель — предложить стране свежие решения актуальных проблем и стать голосом нового поколения россиян в парламенте.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3" alt="Россия - страна возможностей">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="section">
+        <div class="container">
+            <h2 class="section-title">Наши ключевые цели</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">🚀</div>
+                    <h3>Технологический суверенитет</h3>
+                    <p>Развитие отечественных технологий, поддержка IT-сектора и цифровизации экономики для обеспечения независимости России в ключевых отраслях.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">👥</div>
+                    <h3>Поддержка молодежи и участников СВО</h3>
+                    <p>Создание условий для профессиональной реализации молодых специалистов и всесторонняя поддержка участников специальной военной операции.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🏛️</div>
+                    <h3>Региональное развитие</h3>
+                    <p>Укрепление экономик регионов, развитие инфраструктуры и создание равных возможностей для всех граждан России независимо от места проживания.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="section strategy">
+        <div class="container">
+            <h2 class="section-title">Стратегия кампании 2026</h2>
+            <div class="strategy-content">
+                <div class="strategy-point">
+                    <div class="strategy-number">1</div>
+                    <div class="strategy-text">
+                        <h3>Завоевание доверия избирателей</h3>
+                        <p>Партии предстоит продемонстрировать способность мобилизовать электорат и представить убедительную программу, особенно для молодых избирателей, голосующих впервые.</p>
+                    </div>
+                </div>
+                <div class="strategy-point">
+                    <div class="strategy-number">2</div>
+                    <div class="strategy-text">
+                        <h3>Прохождение электорального барьера</h3>
+                        <p>Главная тактическая задача — уверенно преодолеть процентный барьер для прохождения в парламент и закрепиться в политической системе страны.</p>
+                    </div>
+                </div>
+                <div class="strategy-point">
+                    <div class="strategy-number">3</div>
+                    <div class="strategy-text">
+                        <h3>Позиционирование на политическом поле</h3>
+                        <p>Партия будет стремиться занять нишу прагматичной силы, ориентированной на будущее, предлагая конкретные решения в противовес традиционным партиям.</p>
+                    </div>
+                </div>
+                <div class="strategy-point">
+                    <div class="strategy-number">4</div>
+                    <div class="strategy-text">
+                        <h3>Региональная активность</h3>
+                        <p>Успех на выборах в Госдуму зависит от работы в регионах. «МОЯ РОССИЯ» сосредоточит усилия в ключевых субъектах Федерации.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2 class="section-title">Новости партии</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551135049-8a33f3d83e34?ixlib=rb-4.0.3" alt="Заявление о выдвижении">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">15 сентября 2025</div>
+                        <h3>Официальное заявление о участии в выборах</h3>
+                        <p>Партия "МОЯ РОССИЯ" официально подтвердила свое участие в выборах в Государственную Думу в 2026 году.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3" alt="Встреча с избирателями">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">10 сентября 2025</div>
+                        <h3>Старт предвыборной кампании в регионах</h3>
+                        <p>Начался этап встреч с избирателями в ключевых регионах страны, включая Краснодарский край и Новосибирскую область.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3" alt="Презентация программы">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">5 сентября 2025</div>
+                        <h3>Презентация предвыборной программы</h3>
+                        <p>Состоялась публичная презентация основных тезисов предвыборной программы "Технологический прорыв и социальная справедливость".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="section join">
+        <div class="container">
+            <h2 class="section-title">Вступить в партию</h2>
+            <p class="join-text">Присоединяйтесь к нам, чтобы вместе построить технологически развитую и социально справедливую Россию!</p>
+            <form class="join-form">
+                <div class="form-group">
+                    <label for="name">ФИО</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="region">Регион</label>
+                    <select id="region" name="region" required>
+                        <option value="">Выберите регион</option>
+                        <option value="moscow">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="krasnodar">Краснодарский край</option>
+                        <option value="novosibirsk">Новосибирская область</option>
+                        <option value="other">Другой регион</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Партия «МОЯ РОССИЯ»</h3>
+                    <p>Объединяем технологический прогресс и социальную справедливость для построения будущего России.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+                        <li>Email: info@my-russia.ru</li>
+                        <li>Адрес: Москва, ул. Тверская, д. 1</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="#about">О партии</a></li>
+                        <li><a href="#goals">Наши цели</a></li>
+                        <li><a href="#news">Новости</a></li>
+                        <li><a href="#join">Вступить в партию</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Политическая партия «МОЯ РОССИЯ». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        const joinForm = document.querySelector('.join-form');
+        if(joinForm) {
+            joinForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
