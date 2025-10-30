@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- ДАННЫЙ САЙТ СДЕЛАН ИСКЛЮЧИТЕЛЬНО ДЛЯ ПОЛУЧЕНИЯ ХОРОШЕЙ ОЦЕНКИ ПО ОБЩЕСТВОЗНАНИЮ !-->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партия «МОЯ РОССИЯ» - Выборы в Госдуму 2026</title>
+    <title>Thor's Hummer - Молоты с ракетным ускорителем</title>
     <style>
         * {
             margin: 0;
@@ -13,761 +12,194 @@
             font-family: 'Arial', sans-serif;
         }
         
-        :root {
-            --primary-blue: #1f3c7a;
-            --secondary-blue: #2a5298;
-            --accent-red: #d52b1e;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333;
-        }
-        
         body {
-            color: var(--dark-gray);
+            background-color: #0a0a2a;
+            color: #fff;
             line-height: 1.6;
-            background-color: #fff;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: linear-gradient(to right, #1a1a4a, #0a0a2a);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
         }
         
-        .logo-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 0.7rem 1.2rem;
-            transition: all 0.3s;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-        
-        nav ul li a:hover {
-            background-color: rgba(255,255,255,0.15);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(31, 60, 122, 0.85), rgba(42, 82, 152, 0.9)), url('https://images.unsplash.com/photo-1547981609-4b6bf67b7dbb?ixlib=rb-4.0.3') no-repeat center center/cover;
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-        }
-        
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        
-        .hero-content .slogan {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-red);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: 2px solid var(--accent-red);
-            margin: 0 10px;
-        }
-        
-        .cta-button:hover {
-            background-color: transparent;
-            border-color: white;
-        }
-        
-        .cta-button.secondary {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-        
-        .cta-button.secondary:hover {
-            background-color: white;
-            color: var(--primary-blue);
-        }
-        
-        /* Section Common */
-        .section {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-red);
-            margin: 15px auto;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--light-gray);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Goals Section */
-        .goals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .goal-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-            border-top: 4px solid var(--primary-blue);
-        }
-        
-        .goal-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .goal-icon {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-        }
-        
-        .goal-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        /* Promises Section */
-        .promises {
-            background-color: var(--light-gray);
-        }
-        
-        .promises-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .promise-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .promise-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .promise-card h3:before {
-            content: "✓";
-            color: var(--accent-red);
-            font-weight: bold;
-        }
-        
-        /* Strategy Section */
-        .strategy-content {
-            max-width: 900px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
         
-        .strategy-point {
+        .products {
             display: flex;
-            margin-bottom: 2.5rem;
-            align-items: flex-start;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
         }
         
-        .strategy-number {
-            background-color: var(--primary-blue);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 1.5rem;
-            flex-shrink: 0;
+        .product {
+            background: #1a1a4a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s;
         }
         
-        .strategy-text h3 {
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         
-        /* News Section */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .news-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        
-        .news-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .news-image {
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .news-image img {
+        .product img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s;
+            border-radius: 5px;
+            margin-bottom: 15px;
         }
         
-        .news-card:hover .news-image img {
-            transform: scale(1.05);
+        .product h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
         
-        .news-content {
-            padding: 1.5rem;
+        .news {
+            background: #1a1a4a;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .news h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .news-item h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        .news-item p {
+            margin-bottom: 10px;
         }
         
         .news-date {
-            color: #666;
+            color: #aaa;
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
         }
         
-        .news-content h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-blue);
-        }
-        
-        /* Join Section */
-        .join {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .join .section-title {
-            color: white;
-        }
-        
-        .join .section-title:after {
-            background-color: white;
-        }
-        
-        .join-text {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-        }
-        
-        .join-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-        
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input, .form-group select {
-            padding: 12px 15px;
-            border-radius: 4px;
+        .buy-btn {
+            background: #ffcc00;
+            color: #0a0a2a;
             border: none;
-            font-size: 1rem;
-        }
-        
-        .submit-btn {
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
+            transition: background 0.3s;
+            margin-top: 10px;
         }
         
-        .submit-btn:hover {
-            background-color: #b32419;
+        .buy-btn:hover {
+            background: #ffaa00;
         }
         
-        /* Footer */
         footer {
-            background-color: #1a1a1a;
-            color: #ccc;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.7rem;
-        }
-        
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
             text-align: center;
-            padding-top: 1.5rem;
+            padding: 20px;
+            margin-top: 40px;
             border-top: 1px solid #333;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-content .slogan {
-                font-size: 1.2rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-            }
-            
-            .cta-button {
-                width: 80%;
-                text-align: center;
-            }
+            color: #aaa;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <div>
-                    <div class="logo-text">МОЯ РОССИЯ</div>
-                    <div class="logo-subtitle">Политическая партия</div>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">О партии</a></li>
-                    <li><a href="#goals">Наши цели</a></li>
-                    <li><a href="#promises">Наши обещания</a></li>
-                    <li><a href="#strategy">Стратегия</a></li>
-                    <li><a href="#news">Новости</a></li>
-                    <li><a href="#join">Вступить</a></li>
-                </ul>
-            </nav>
+        <div class="container">
+            <div class="logo">Thor's Hummer</div>
+            <p>Мощные молоты с ракетными ускорителями для современных богов</p>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>МОЯ РОССИЯ - Выборы в Госдуму 2026</h1>
-            <p class="slogan">Технологический прорыв для регионов, цифровая трансформация экономики. Реальные дела вместо пустых обещаний!</p>
-            <div class="cta-buttons">
-                <a href="#join" class="cta-button">Вступить в партию</a>
-                <a href="#promises" class="cta-button secondary">Наши обещания</a>
+    
+    <div class="container">
+        <div class="products">
+            <div class="product">
+                <img src="hummer1.jpg" alt="Thor's Hummer 1">
+                <h3>Thor's Hummer 1</h3>
+                <p>Базовая модель с ракетным ускорителем. Идеально подходит для нанесения сокрушительных ударов.</p>
+                <button class="buy-btn">Купить сейчас</button>
+            </div>
+            
+            <div class="product">
+                <img src="hummer2.jpg" alt="Thor's Hummer 2">
+                <h3>Thor's Hummer 2</h3>
+                <p>Улучшенная модель с функцией полета и возвращения в руку. Стань настоящим богом грома!</p>
+                <button class="buy-btn">Купить сейчас</button>
+            </div>
+            
+            <div class="product">
+                <img src="hummer3.jpg" alt="Thor's Hummer 3">
+                <h3>Thor's Hummer 3</h3>
+                <p>Продвинутая модель с электрошокером. Все функции Thor's Hummer 2 плюс электрический разряд.</p>
+                <button class="buy-btn">Купить сейчас</button>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">О партии «МОЯ РОССИЯ»</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Партия «МОЯ РОССИЯ» — это политическая сила, которая делает ставку на технологическое развитие регионов и создание цифровой экономики. Наш дебют на федеральном уровне состоится на выборах в Государственную Думу РФ в 2026 году.</p>
-                    <br>
-                    <p>Мы убеждены, что будущее России — в технологическом суверенитете и равномерном развитии всех регионов страны. Наша команда объединяет IT-специалистов, инженеров, предпринимателей и региональных лидеров, которые знают, как превратить потенциал малых городов в точки роста экономики.</p>
-                    <br>
-                    <p>Наша цель — не просто попасть в парламент, а реализовать конкретные проекты, которые изменят жизнь людей к лучшему.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3" alt="Россия - страна возможностей">
-                </div>
+        
+        <div class="news">
+            <h2>Новости о Thor's Hummer</h2>
+            
+            <div class="news-item">
+                <h3>Thor's Hummer 3 получил награду "Инновация года"</h3>
+                <p class="news-date">15 октября 2023</p>
+                <p>Новая модель Thor's Hummer 3 с функцией электрошока получила престижную награду в области технологических инноваций. Жюри отметило уникальное сочетание мощности и функциональности.</p>
+            </div>
+            
+            <div class="news-item">
+                <h3>Расширение дилерской сети Thor's Hummer</h3>
+                <p class="news-date">2 октября 2023</p>
+                <p>Мы рады сообщить об открытии новых официальных дилерских центров Thor's Hummer в 15 странах мира. Теперь приобрести легендарный молот стало еще проще!</p>
+            </div>
+            
+            <div class="news-item">
+                <h3>Обновление прошивки для Thor's Hummer 2</h3>
+                <p class="news-date">20 сентября 2023</p>
+                <p>Вышло обновление программного обеспечения для модели Thor's Hummer 2. Теперь система наведения и возврата молота в руку работает еще точнее и стабильнее.</p>
+            </div>
+            
+            <div class="news-item">
+                <h3>Thor's Hummer в кино: новое появление в блокбастере</h3>
+                <p class="news-date">5 сентября 2023</p>
+                <p>Thor's Hummer 2 появился в новом голливудском блокбастере "Громовые войны". Режиссер фильма отметил невероятную реалистичность спецэффектов с использованием нашего молота.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Goals Section -->
-    <section id="goals" class="section">
-        <div class="container">
-            <h2 class="section-title">Наши ключевые цели</h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <div class="goal-icon">🚀</div>
-                    <h3>Технологический суверенитет регионов</h3>
-                    <p>Создание IT-кластеров в 50 регионах России, поддержка технологических стартапов и внедрение Smart City в городах с населением от 100 тысяч человек.</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-icon">🏭</div>
-                    <h3>Промышленная цифровизация</h3>
-                    <p>Перевод 70% промышленных предприятий на цифровые платформы, создание центров компетенций по Industry 4.0 в каждом федеральном округе.</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-icon">🌾</div>
-                    <h3>Агротех-революция</h3>
-                    <p>Внедрение точного земледелия на 80% сельхозугодий, создание агротех-парков и поддержка фермеров через цифровые платформы.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promises Section -->
-    <section id="promises" class="section promises">
-        <div class="container">
-            <h2 class="section-title">Что мы сделаем в Госдуме</h2>
-            <div class="promises-grid">
-                <div class="promise-card">
-                    <h3>Закон о технологических зонах</h3>
-                    <p>Создадим 25 особых технологических зон с налоговыми льготами для IT-компаний, которые переведут свои штаб-квартиры в регионы.</p>
-                </div>
-                <div class="promise-card">
-                    <h3>Федеральная программа "Цифровой регион"</h3>
-                    <p>Выделим 150 млрд рублей на подключение всех населенных пунктов к высокоскоростному интернету и создание цифровой инфраструктуры.</p>
-                </div>
-                <div class="promise-card">
-                    <h3>Реформа образования</h3>
-                    <p>Откроем 100 центров цифровых компетенций в вузах по всей стране и введем обязательные IT-курсы для госслужащих.</p>
-                </div>
-                <div class="promise-card">
-                    <h3>Поддержка технологического бизнеса</h3>
-                    <p>Упростим получение патентов в 3 раза и создадим фонд гарантий для технологических стартапов с бюджетом 50 млрд рублей.</p>
-                </div>
-                <div class="promise-card">
-                    <h3>Цифровизация ЖКХ</h3>
-                    <p>Внедрим умные системы управления ЖКХ в 1000 городов, что снизит затраты на коммунальные услуги на 15-20%.</p>
-                </div>
-                <div class="promise-card">
-                    <h3>Развитие Дальнего Востока</h3>
-                    <p>Создадим особый налоговый режим для IT-компаний на Дальнем Востоке и увеличим финансирование инфраструктурных проектов в 2 раза.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Strategy Section -->
-    <section id="strategy" class="section">
-        <div class="container">
-            <h2 class="section-title">Стратегия кампании 2026</h2>
-            <div class="strategy-content">
-                <div class="strategy-point">
-                    <div class="strategy-number">1</div>
-                    <div class="strategy-text">
-                        <h3>Фокус на технологических центрах</h3>
-                        <p>Концентрация усилий в 15 технологических кластерах: Москва, Санкт-Петербург, Новосибирск, Казань, Екатеринбург, Нижний Новгород, Томск, Красноярск, Владивосток, Калининград, Ростов-на-Дону, Самара, Уфа, Краснодар, Воронеж.</p>
-                    </div>
-                </div>
-                <div class="strategy-point">
-                    <div class="strategy-number">2</div>
-                    <div class="strategy-text">
-                        <h3>Работа с IT-сообществом</h3>
-                        <p>Привлечение на свою сторону 70% IT-специалистов через конкретные предложения по улучшению условий для технологического бизнеса и цифровой трансформации госуслуг.</p>
-                    </div>
-                </div>
-                <div class="strategy-point">
-                    <div class="strategy-number">3</div>
-                    <div class="strategy-text">
-                        <h3>Региональные технологические форумы</h3>
-                        <p>Проведение 50 региональных форумов "Технологии для развития" с участием местных бизнес-сообществ, IT-специалистов и органов власти.</p>
-                    </div>
-                </div>
-                <div class="strategy-point">
-                    <div class="strategy-number">4</div>
-                    <div class="strategy-text">
-                        <h3>Цифровая агитационная кампания</h3>
-                        <p>Использование big data для таргетирования предвыборной агитации и создание цифровых платформ для взаимодействия с избирателями.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- News Section -->
-    <section id="news" class="section">
-        <div class="container">
-            <h2 class="section-title">Новости партии</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://2030.urfu.ru/files/87BE2ACB-549F-49E2-BAC9-A8B9535DE01F" alt="Заявление о выдвижении">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">15 сентября 2025</div>
-                        <h3>Презентация программы "Цифровые регионы"</h3>
-                        <p>Партия "МОЯ РОССИЯ" представила детальный план технологического развития всех федеральных округов страны.</p>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3" alt="Встреча с избирателями">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">10 сентября 2025</div>
-                        <h3>Старт кампании в Сибири и на Дальнем Востоке</h3>
-                        <p>Начался этап встреч с IT-сообществом и промышленниками в ключевых регионах Сибири и Дальнего Востока.</p>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3" alt="Презентация программы">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-date">5 сентября 2025</div>
-                        <h3>Подписание соглашений с технопарками</h3>
-                        <p>Партия заключила соглашения о сотрудничестве с 20 ведущими технопарками и IT-кластерами страны.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Section -->
-    <section id="join" class="section join">
-        <div class="container">
-            <h2 class="section-title">Вступить в партию</h2>
-            <p class="join-text">Присоединяйтесь к нам, чтобы вместе построить технологически развитую Россию, где каждый регион становится центром инноваций!</p>
-            <form class="join-form">
-                <div class="form-group">
-                    <label for="name">ФИО</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Электронная почта</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="region">Регион</label>
-                    <select id="region" name="region" required>
-                        <option value="">Выберите регион</option>
-                        <option value="moscow">Москва</option>
-                        <option value="spb">Санкт-Петербург</option>
-                        <option value="krasnodar">Краснодарский край</option>
-                        <option value="novosibirsk">Новосибирская область</option>
-                        <option value="siberia">Сибирский ФО</option>
-                        <option value="far_east">Дальневосточный ФО</option>
-                        <option value="other">Другой регион</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="profession">Профессия/Сфера деятельности</label>
-                    <input type="text" id="profession" name="profession" placeholder="IT, инженерия, образование и т.д.">
-                </div>
-                <button type="submit" class="submit-btn">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    </div>
+    
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Партия «МОЯ РОССИЯ»</h3>
-                    <p>Строим технологическое будущее России вместе. Региональное развитие через инновации и цифровизацию.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Контакты</h3>
-                    <ul>
-                        <li>Телефон: +7 (495) 123-45-67</li>
-                        <li>Email: info@моя-россия.рф</li>
-                        <li>Адрес: Москва, улица Братьев Фонченко, д. 10</li>
-                        <li>Телеграм: t.me/moya_rossiya_2026</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Быстрые ссылки</h3>
-                    <ul>
-                        <li><a href="#about">О партии</a></li>
-                        <li><a href="#goals">Наши цели</a></li>
-                        <li><a href="#promises">Наши обещания</a></li>
-                        <li><a href="#news">Новости</a></li>
-                        <li><a href="#join">Вступить в партию</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2025 Политическая партия «МОЯ РОССИЯ». Все права защищены.</p>
-            </div>
+            <p>Thor's Hummer &copy; 2023. Все права защищены. Только для богов и избранных смертных.</p>
+            <p>Перед использованием ознакомьтесь с инструкцией. Не направляйте молот на людей и животных. Производитель не несет ответственности за разрушения, вызванные неправильным использованием Thor's Hummer.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Form submission handling
-        const joinForm = document.querySelector('.join-form');
-        if(joinForm) {
-            joinForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время для уточнения деталей.');
-                this.reset();
-            });
-        }
-    </script>
 </body>
 </html>
