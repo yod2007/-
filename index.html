@@ -3,203 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thor's Hummer - Молоты с ракетным ускорителем</title>
+    <title>Thor's Hummer - Легендарные молоты с ракетными ускорителями</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary: #ffcc00;
+            --secondary: #00a8ff;
+            --dark: #0a0a2a;
+            --darker: #050518;
+            --light: #ffffff;
+            --gray: #8a8aa3;
         }
         
         body {
-            background-color: #0a0a2a;
-            color: #fff;
-            line-height: 1.6;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
         
-        header {
-            background: linear-gradient(to right, #1a1a4a, #0a0a2a);
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid #ffcc00;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        .products {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-        
-        .product {
-            background: #1a1a4a;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px;
-            width: 300px;
-            text-align: center;
-            border: 1px solid #333;
-            transition: transform 0.3s;
-        }
-        
-        .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .product img {
+        /* Header */
+        header {
+            background: rgba(10, 10, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, rgba(0, 168, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(255, 204, 0, 0.1) 0%, transparent 50%);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), #ffaa00);
+            color: var(--darker);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: rgba(5, 5, 24, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
             margin-bottom: 15px;
         }
         
-        .product h3 {
-            color: #ffcc00;
-            margin-bottom: 10px;
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 204, 0, 0.3);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-image {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h3 {
             font-size: 1.5rem;
-        }
-        
-        .news {
-            background: #1a1a4a;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        
-        .news h2 {
-            color: #ffcc00;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-        
-        .news-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #333;
-        }
-        
-        .news-item h3 {
-            color: #ffcc00;
             margin-bottom: 10px;
+            color: var(--primary);
         }
         
-        .news-item p {
-            margin-bottom: 10px;
+        .product-features {
+            list-style: none;
+            margin: 15px 0;
         }
         
-        .news-date {
-            color: #aaa;
+        .product-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-features i {
+            color: var(--primary);
+            margin-right: 10px;
             font-size: 0.9rem;
         }
         
-        .buy-btn {
-            background: #ffcc00;
-            color: #0a0a2a;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .product-price {
+            font-size: 1.8rem;
             font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
+            color: var(--light);
+            margin: 20px 0;
         }
         
-        .buy-btn:hover {
-            background: #ffaa00;
-        }
-        
-        footer {
+        .buy-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(45deg, var(--primary), #ffaa00);
+            color: var(--darker);
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            border-top: 1px solid #333;
-            color: #aaa;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .buy-button:hover {
+            background: linear-gradient(45deg, #ffaa00, var(--primary));
+            transform: translateY(-2px);
+        }
+        
+        /* News Section */
+        .news {
+            padding: 100px 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .news-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .news-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .news-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: rgba(5, 5, 24, 0.7);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 25px;
+            background: rgba(26, 26, 58, 0.7);
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 204, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(255, 204, 0, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="logo">Thor's Hummer</div>
-            <p>Мощные молоты с ракетными ускорителями для современных богов</p>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-hammer"></i>
+                Thor's Hummer
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#products">Модели</a></li>
+                <li><a href="#features">Возможности</a></li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
         </div>
     </header>
-    
-    <div class="container">
-        <div class="products">
-            <div class="product">
-                <img src="hummer1.jpg" alt="Thor's Hummer 1">
-                <h3>Thor's Hummer 1</h3>
-                <p>Базовая модель с ракетным ускорителем. Идеально подходит для нанесения сокрушительных ударов.</p>
-                <button class="buy-btn">Купить сейчас</button>
-            </div>
-            
-            <div class="product">
-                <img src="hummer2.jpg" alt="Thor's Hummer 2">
-                <h3>Thor's Hummer 2</h3>
-                <p>Улучшенная модель с функцией полета и возвращения в руку. Стань настоящим богом грома!</p>
-                <button class="buy-btn">Купить сейчас</button>
-            </div>
-            
-            <div class="product">
-                <img src="hummer3.jpg" alt="Thor's Hummer 3">
-                <h3>Thor's Hummer 3</h3>
-                <p>Продвинутая модель с электрошокером. Все функции Thor's Hummer 2 плюс электрический разряд.</p>
-                <button class="buy-btn">Купить сейчас</button>
-            </div>
-        </div>
-        
-        <div class="news">
-            <h2>Новости о Thor's Hummer</h2>
-            
-            <div class="news-item">
-                <h3>Thor's Hummer 3 получил награду "Инновация года"</h3>
-                <p class="news-date">15 октября 2023</p>
-                <p>Новая модель Thor's Hummer 3 с функцией электрошока получила престижную награду в области технологических инноваций. Жюри отметило уникальное сочетание мощности и функциональности.</p>
-            </div>
-            
-            <div class="news-item">
-                <h3>Расширение дилерской сети Thor's Hummer</h3>
-                <p class="news-date">2 октября 2023</p>
-                <p>Мы рады сообщить об открытии новых официальных дилерских центров Thor's Hummer в 15 странах мира. Теперь приобрести легендарный молот стало еще проще!</p>
-            </div>
-            
-            <div class="news-item">
-                <h3>Обновление прошивки для Thor's Hummer 2</h3>
-                <p class="news-date">20 сентября 2023</p>
-                <p>Вышло обновление программного обеспечения для модели Thor's Hummer 2. Теперь система наведения и возврата молота в руку работает еще точнее и стабильнее.</p>
-            </div>
-            
-            <div class="news-item">
-                <h3>Thor's Hummer в кино: новое появление в блокбастере</h3>
-                <p class="news-date">5 сентября 2023</p>
-                <p>Thor's Hummer 2 появился в новом голливудском блокбастере "Громовые войны". Режиссер фильма отметил невероятную реалистичность спецэффектов с использованием нашего молота.</p>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <p>Thor's Hummer &copy; 2023. Все права защищены. Только для богов и избранных смертных.</p>
-            <p>Перед использованием ознакомьтесь с инструкцией. Не направляйте молот на людей и животных. Производитель не несет ответственности за разрушения, вызванные неправильным использованием Thor's Hummer.</p>
+            <h1 class="floating">Thor's Hummer</h1>
+            <p>Легендарные молоты с ракетными ускорителями для современных богов. Мощь, скорость и технологии в ваших руках!</p>
+            <a href="#products" class="cta-button">Выбрать модель <i class="fas fa-arrow-right"></i></a>
         </div>
-    </footer>
-</body>
-</html>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши модели</h2>
+                <p>Выберите Thor's Hummer, который подходит именно вам</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Бестселлер</div>
+                    <img src="hummer1.jpg" alt="Thor's Hummer 1" class="product-image">
+                    <div class="product-content">
+                        <h3>Thor's Hummer 1</h3>
+                        <p>Базовая модель с ракетным ускорителем для сокрушительных ударов.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Ракетный ускоритель
